@@ -1,12 +1,12 @@
 
 
-# 📚 Library Management System (LMS)
+#  Library Management System (LMS)
 
 This project implements a complete **Library Management System** using **MySQL**, covering all major components such as Employees, Members, Books, Authors, Admins, Transactions, and Memberships. It includes advanced features like **stored procedures**, **triggers**, and **referential integrity** via **foreign key constraints**.
 
 ---
 
-## 🗃️ Schema Overview
+##  Schema Overview
 
 The system is structured into several relational tables:
 
@@ -50,33 +50,33 @@ Tracks book borrow/return records.
 
 ## ⚙️ Stored Procedures
 
-### 📖 `AddMember`
+###  `AddMember`
 Adds a new member and returns their assigned ID.
 
-### 📚 `AddBook`
+###  `AddBook`
 Adds a new book to the system.
 
-### 🔄 `IssueBook`
+###  `IssueBook`
 Handles book issuing to a member, with membership and borrowing constraints.
 
-### 🔁 `ReturnBook`
+###  `ReturnBook`
 Handles the return of issued books and updates book status and fine if needed.
 
 ---
 
-## ⚡ Triggers
+##  Triggers
 
-### ✅ `check_book_limit`
+###  `check_book_limit`
 Prevents a member from borrowing more than the allowed number of books based on their membership type:
 - **Monthly**: 2 books max
 - **Yearly**: 200 books max
 
-### 💰 `calculate_fine`
+###  `calculate_fine`
 Calculates a fine of ₹0.50 per day for overdue returns when `DUEDATE` is manually updated to an earlier date.
 
 ---
 
-## 🔗 Relationships & Constraints
+##  Relationships & Constraints
 
 - Foreign key constraints ensure data integrity across:
   - `BOOK.AUTHORID` → `AUTHOR.AUTHOR_ID`
@@ -86,7 +86,7 @@ Calculates a fine of ₹0.50 per day for overdue returns when `DUEDATE` is manua
 
 ---
 
-## 🧪 Sample Queries & Usage
+##  Sample Queries & Usage
 
 ### Add a member:
 ```sql
@@ -110,7 +110,7 @@ CALL ReturnBook(5, 1);
 
 ---
 
-## 📝 Notes
+##  Notes
 
 - Ensure foreign key constraints are added after table creation.
 - Triggers are automatically invoked before `INSERT` or `UPDATE` on `TRANSACTION`.
@@ -119,14 +119,14 @@ CALL ReturnBook(5, 1);
 
 ---
 
-## 📎 Dependencies
+##  Dependencies
 
 - MySQL 8.0+
 - Proper privileges for trigger and procedure creation
 
 ---
 
-## 🛠️ Setup Instructions
+##  Setup Instructions
 
 1. Clone the repository.
 2. Import the SQL script into your MySQL server.
@@ -134,7 +134,7 @@ CALL ReturnBook(5, 1);
 
 ---
 
-## 📂 Files in this Repo
+##  Files in this Repo
 - `Library management system.sql` — Trigger definitions
 - `README.md` — This file 📘
 
@@ -142,7 +142,7 @@ CALL ReturnBook(5, 1);
 
 
 
-## 👩‍💻 Authors
+##  Authors
 
 - Built by [SNEHAL YUTIKA, AIMAN] as part of a course project at [BIRLA INSTITUTE OF TECHNOLOGY AND SCIENCE, PILANI].
 
